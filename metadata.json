@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Cabinet Médical Dr. Achour",
+  "description": "Site web professionnel pour le Cabinet Médical du Dr. Achour, offrant des services de médecine générale, conseils de santé et prise de contact rapide via WhatsApp.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
