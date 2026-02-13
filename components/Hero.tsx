@@ -39,10 +39,14 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
       ))}
 
       <div className="container mx-auto px-6 relative z-10 text-center">
-        <div className="inline-block mb-8 animate-fade-in">
-            <svg className="w-20 h-20 mx-auto text-red-600 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M12 22V10M12 10L16 6M12 10L8 6M12 10V2M12 2L9 5M12 2L15 5M6 14C6 14 6 18 12 18C18 18 18 14 18 14M4 11C4 11 4 15 12 15C20 15 20 11 20 11" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+       <div className="inline-block mb-10 animate-fade-in">
+            <div className="w-32 h-32 mx-auto overflow-hidden shadow-2xl mb-6">
+              <img 
+                src="images/logo.png" 
+                alt="Dr. El Mustapha Achour" 
+                className="w-full h-full object-cover"
+              />
+            </div>
         </div>
         
         <h2 className="text-xl md:text-2xl text-white font-medium mb-2 tracking-[0.2em] uppercase">Docteur</h2>
