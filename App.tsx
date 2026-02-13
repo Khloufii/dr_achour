@@ -23,23 +23,24 @@ const App: React.FC = () => {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [user, setUser] = useState<any>(null);
 
-  // Parse current URL to set state
+  // Parse hash to set state (Solves the "Not Found" on refresh issue)
   const parseLocation = useCallback(() => {
-    const path = window.location.pathname;
-    if (path === '/') setCurrentView('home');
-    else if (path === '/services') setCurrentView('services');
-    else if (path === '/a-propos') setCurrentView('about');
-    else if (path === '/blog') setCurrentView('blog');
-    else if (path === '/contact') setCurrentView('contact');
-    else if (path === '/login') setCurrentView('login');
-    else if (path === '/dashboard') setCurrentView('admin');
-    else if (path.startsWith('/service/')) {
-      const id = path.split('/')[2];
+    const hash = window.location.hash || '#/';
+    
+    if (hash === '#/' || hash === '') setCurrentView('home');
+    else if (hash === '#/services') setCurrentView('services');
+    else if (hash === '#/a-propos') setCurrentView('about');
+    else if (hash === '#/blog') setCurrentView('blog');
+    else if (hash === '#/contact') setCurrentView('contact');
+    else if (hash === '#/login') setCurrentView('login');
+    else if (hash === '#/dashboard') setCurrentView('admin');
+    else if (hash.startsWith('#/service/')) {
+      const id = hash.split('/')[2];
       setSelectedId(id);
       setCurrentView('service-detail');
     }
-    else if (path.startsWith('/article/')) {
-      const id = path.split('/')[2];
+    else if (hash.startsWith('#/article/')) {
+      const id = hash.split('/')[2];
       setSelectedId(id);
       setCurrentView('blog-detail');
     }
@@ -48,15 +49,15 @@ const App: React.FC = () => {
 
   useEffect(() => {
     parseLocation();
-    window.addEventListener('popstate', parseLocation);
-    return () => window.removeEventListener('popstate', parseLocation);
+    window.addEventListener('hashchange', parseLocation);
+    return () => window.removeEventListener('hashchange', parseLocation);
   }, [parseLocation]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      // Auto-redirect if logged in and on login page
-      if (currentUser && window.location.pathname === '/login') {
+      // Auto-redirect to dashboard if logged in and trying to access login
+      if (currentUser && window.location.hash === '#/login') {
         handleNavigate('admin');
       }
     });
@@ -68,22 +69,21 @@ const App: React.FC = () => {
   }, [currentView, selectedId]);
 
   const handleNavigate = (view: ViewType, id?: string) => {
-    let path = '/';
+    let hash = '#/';
     switch (view) {
-      case 'home': path = '/'; break;
-      case 'services': path = '/services'; break;
-      case 'about': path = '/a-propos'; break;
-      case 'blog': path = '/blog'; break;
-      case 'contact': path = '/contact'; break;
-      case 'login': path = '/login'; break;
-      case 'admin': path = '/dashboard'; break;
-      case 'service-detail': path = `/service/${id}`; break;
-      case 'blog-detail': path = `/article/${id}`; break;
+      case 'home': hash = '#/'; break;
+      case 'services': hash = '#/services'; break;
+      case 'about': hash = '#/a-propos'; break;
+      case 'blog': hash = '#/blog'; break;
+      case 'contact': hash = '#/contact'; break;
+      case 'login': hash = '#/login'; break;
+      case 'admin': hash = '#/dashboard'; break;
+      case 'service-detail': hash = `#/service/${id}`; break;
+      case 'blog-detail': hash = `#/article/${id}`; break;
     }
     
     if (id) setSelectedId(id);
-    window.history.pushState({}, '', path);
-    setCurrentView(view);
+    window.location.hash = hash;
   };
 
   const renderView = () => {
