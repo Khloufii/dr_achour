@@ -31,6 +31,7 @@ export interface Appointment {
   message: string;
   appointmentDate: string; // YYYY-MM-DD
   appointmentTime: string; // HH:mm
+  price?: string | number;
   status: 'pending' | 'completed';
   createdAt: any;
 }
