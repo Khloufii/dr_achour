@@ -8,21 +8,21 @@ export const blogPosts = [
     title: 'Comment renforcer son système immunitaire en hiver ?',
     excerpt: 'Découvrez nos conseils pratiques pour traverser la saison froide en pleine forme et éviter les virus.',
     date: '12 Jan 2026',
-    imageUrl: 'images/immunitaire en hiver.webp'
+    imageUrl: '/images/immunitaire en hiver.webp'
   },
   {
     id: '2',
     title: 'L\'importance du bilan de santé annuel',
     excerpt: 'Pourquoi ne pas attendre d\'être malade pour consulter son médecin généraliste et faire un check-up.',
     date: '05 Jan 2026',
-    imageUrl: 'images/bilant.webp'
+    imageUrl: '/images/bilant.webp'
   },
   {
     id: '3',
     title: 'Nutrition : Les mythes et réalités du sucre',
     excerpt: 'Tout comprendre sur l\'impact du sucre sur votre santé au quotidien et comment réduire sa consommation.',
     date: '28 Dec 2026',
-    imageUrl: 'images/sucr.webp'
+    imageUrl: '/images/sucr.webp'
   }
 ];
 

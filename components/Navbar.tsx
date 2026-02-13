@@ -5,9 +5,10 @@ import { ViewType } from '../App';
 interface NavbarProps {
   currentView: ViewType;
   onNavigate: (view: ViewType) => void;
+  user: any;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate }) => {
+const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, user }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -37,18 +38,25 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate }) => {
     window.location.href = "tel:0649295099";
   };
 
-  const logoImg = "images/logo.png";
-
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled || currentView !== 'home' ? 'bg-white shadow-md py-3' : 'bg-transparent py-6'}`}>
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <button onClick={() => handleNavClick('home')} className="flex items-center gap-3 group">
-          <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-red-700 shadow-lg group-hover:scale-110 transition-transform">
-            <img src={logoImg} alt="Dr. Achour" className="w-full h-full object-cover" />
+      <div className="container max-w-[1600px] mx-auto px-6 flex justify-between items-center">
+        <button onClick={() => handleNavClick('home')} className="flex items-center gap-3 group text-left">
+          <div className="w-12 h-12 rounded-xl overflow-hidden shadow-md border border-slate-100 group-hover:scale-110 transition-transform">
+            <img 
+              src="images/logo.png" 
+              alt="Dr. Achour" 
+              className="w-full h-full object-cover"
+            />
           </div>
-          <span className={`text-xl font-bold tracking-tight transition-colors ${(isScrolled || currentView !== 'home') ? 'text-slate-900' : 'text-white'}`}>
-            DR. <span className="text-red-700">ACHOUR</span>
-          </span>
+          <div className="flex flex-col">
+            <span className={`text-sm font-arabic font-bold leading-none ${(isScrolled || currentView !== 'home') ? 'text-slate-900' : 'text-white'}`}>
+              الدكتور المصطفى عاشور
+            </span>
+            <span className={`text-lg font-black tracking-tighter leading-tight transition-colors ${(isScrolled || currentView !== 'home') ? 'text-slate-900' : 'text-white'}`}>
+              DR. EL MUSTAPHA <span className="text-red-700">ACHOUR</span>
+            </span>
+          </div>
         </button>
 
         {/* Desktop Menu */}
@@ -66,6 +74,23 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate }) => {
                 {link.name}
               </button>
             ))}
+            {!user ? (
+              <button
+                onClick={() => handleNavClick('login')}
+                className={`text-xs font-bold uppercase tracking-widest transition-all hover:text-red-700 opacity-60 hover:opacity-100 flex items-center gap-1 ${
+                  isScrolled || currentView !== 'home' ? 'text-slate-400' : 'text-white/70'
+                }`}
+              >
+                <span>🔐</span> Admin
+              </button>
+            ) : (
+              <button
+                onClick={() => handleNavClick('admin')}
+                className="text-xs font-bold uppercase tracking-widest text-red-700 animate-pulse"
+              >
+                Dashboard
+              </button>
+            )}
           </div>
 
           <div className="flex items-center gap-3">
@@ -107,8 +132,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate }) => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white fixed inset-x-0 top-[60px] shadow-2xl animate-fade-in-down border-t border-slate-100 h-screen">
-          <div className="flex flex-col p-8 gap-6">
+        <div className="md:hidden bg-white fixed inset-x-0 top-[60px] shadow-2xl animate-fade-in-down border-t border-slate-100 h-screen overflow-y-auto">
+          <div className="flex flex-col p-8 gap-6 pb-32">
             {navLinks.map((link) => (
               <button
                 key={link.name}
@@ -118,6 +143,22 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate }) => {
                 {link.name}
               </button>
             ))}
+
+            {!user ? (
+              <button
+                onClick={() => handleNavClick('login')}
+                className="text-slate-400 font-bold text-lg flex items-center gap-2 py-2"
+              >
+                🔐 Accès Administration
+              </button>
+            ) : (
+              <button
+                onClick={() => handleNavClick('admin')}
+                className="text-red-700 font-bold text-lg flex items-center gap-2 py-2"
+              >
+                ⚙️ Tableau de bord Admin
+              </button>
+            )}
             
             <div className="flex flex-col gap-4 mt-6">
               <button

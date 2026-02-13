@@ -22,3 +22,15 @@ export interface Tip {
   content: string;
   icon: string;
 }
+
+export interface Appointment {
+  id?: string;
+  name: string;
+  phone: string;
+  reason: string;
+  message: string;
+  appointmentDate: string; // YYYY-MM-DD
+  appointmentTime: string; // HH:mm
+  status: 'pending' | 'completed';
+  createdAt: any;
+}

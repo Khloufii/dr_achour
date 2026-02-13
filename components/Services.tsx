@@ -8,42 +8,42 @@ export const servicesData = [
     title: 'Consultation Générale',
     description: 'Suivi de santé complet, diagnostics et soins préventifs pour toute la famille.',
     icon: '🩺',
-    imageUrl: 'images/Consultation Générale.webp'
+    imageUrl: '/images/Consultation Générale.webp'
   },
   {
     id: '2',
     title: 'Échographie Médicale',
     description: 'Examens radiologiques par ultrasons précis pour un diagnostic immédiat.',
     icon: '📟',
-    imageUrl: 'images/Échographie Médicale.webp'
+    imageUrl: '/images/Échographie Médicale.webp'
   },
   {
     id: '3',
     title: 'Traitement des Douleurs',
     description: 'Gestion spécialisée des douleurs chroniques, articulaires et neuropathiques.',
     icon: '🧘',
-    imageUrl: 'images/Traitement des Douleurs.webp'
+    imageUrl: '/images/Traitement des Douleurs.webp'
   },
   {
     id: '4',
     title: 'Épileptologie',
     description: 'Diagnostic et suivi neurologique pour les patients souffrant de crises convulsives.',
     icon: '🧠',
-    imageUrl: 'images/Épileptologie.jpg'
+    imageUrl: '/images/Épileptologie.jpg'
   },
   {
     id: '5',
     title: 'Pédiatrie',
     description: 'Suivi de croissance et soins infantiles dans un environnement sécurisant.',
     icon: '👶',
-    imageUrl: 'images/Pédiatrie.webp'
+    imageUrl: '/images/Pédiatrie.webp'
   },
   {
     id: '6',
     title: 'Suivi Chronique',
     description: 'Gestion du diabète, hypertension et bilans métaboliques réguliers.',
     icon: '📊',
-    imageUrl: 'images/Suivi Chronique.webp'
+    imageUrl: '/images/Suivi Chronique.webp'
   }
 ];
 
