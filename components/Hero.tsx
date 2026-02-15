@@ -49,10 +49,16 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             </div>
         </div>
         
-        <h2 className="text-xl md:text-2xl text-white font-medium mb-2 tracking-[0.2em] uppercase">Docteur</h2>
-        <h1 className="text-5xl md:text-8xl font-bold text-white mb-6 leading-tight">
-          EL MUSTAPHA <span className="text-red-600">ACHOUR</span>
-        </h1>
+       <div className="space-y-4 mb-10">
+            <h2 className="text-3xl md:text-5xl text-white font-arabic font-bold mb-2">
+              Cabinet Médical Dr. El Mustapha Achour
+            </h2>
+            <div className="w-24 h-1 bg-red-600 mx-auto rounded-full"></div>
+           
+            <p className="text-white/80 text-lg md:text-2xl font-medium max-w-2xl mx-auto italic">
+              "Votre santé est notre priorité au cœur de Meknès."
+            </p>
+        </div>
         
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12 mb-12">
             <div className="flex flex-col items-center">

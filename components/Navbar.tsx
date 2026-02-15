@@ -51,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate, user }) => {
           </div>
           <div className="flex flex-col">
             <span className={`text-sm font-arabic font-bold leading-none ${(isScrolled || currentView !== 'home') ? 'text-slate-900' : 'text-white'}`}>
-              الدكتور المصطفى عاشور
+              الدكتور المصطفى عشور
             </span>
             <span className={`text-lg font-black tracking-tighter leading-tight transition-colors ${(isScrolled || currentView !== 'home') ? 'text-slate-900' : 'text-white'}`}>
               DR. EL MUSTAPHA <span className="text-red-700">ACHOUR</span>

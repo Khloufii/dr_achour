@@ -5,7 +5,7 @@ import { ViewType } from '../App';
 export const servicesData = [
   {
     id: '1',
-    title: 'Consultation Générale',
+    title: 'Consultation Medicale',
     description: 'Suivi de santé complet, diagnostics et soins préventifs pour toute la famille.',
     icon: '🩺',
     imageUrl: '/images/Consultation Générale.webp'
@@ -19,10 +19,10 @@ export const servicesData = [
   },
   {
     id: '3',
-    title: 'Traitement des Douleurs',
-    description: 'Gestion spécialisée des douleurs chroniques, articulaires et neuropathiques.',
-    icon: '🧘',
-    imageUrl: '/images/Traitement des Douleurs.webp'
+    title: 'Prise en charge Médicale',
+    description: 'Gestion globale de votre santé avec des protocoles de soins coordonnés et personnalisés.',
+    icon: '🏢',
+    imageUrl: '/images/Prise en charge Médicale.jpg'
   },
   {
     id: '4',
@@ -44,6 +44,13 @@ export const servicesData = [
     description: 'Gestion du diabète, hypertension et bilans métaboliques réguliers.',
     icon: '📊',
     imageUrl: '/images/Suivi Chronique.webp'
+  },
+  {
+   id: '7',
+    title: 'Prise en charge des Douleurs',
+    description: 'Traitement spécialisé des douleurs chroniques, articulaires et neuropathiques.',
+    icon: '🧘',
+    imageUrl: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800'
   }
 ];
 
@@ -59,7 +66,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate, isListView }) => {
     <div className="container mx-auto px-6">
       <div className="text-center mb-16">
         <span className="text-red-700 font-bold tracking-widest uppercase text-sm">Expertise Médicale</span>
-        <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mt-2">Nos Services & Spécialités</h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mt-2">Nos Services Medicaux</h2>
         <div className="w-20 h-1.5 bg-red-700 mx-auto mt-6 rounded-full"></div>
       </div>
 

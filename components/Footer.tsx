@@ -44,14 +44,23 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           <div className="space-y-8">
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-red-700 shadow-xl">
-                <img src={logoImg} alt="Dr. Achour" className="w-full h-full object-cover" />
-              </div>
-              <h4 className="text-2xl font-bold tracking-tighter">
-                DR. <span className="text-red-600">ACHOUR</span>
-              </h4>
-            </div>
+             <button onClick={() => handleNavClick('home')} className="flex items-center gap-3 group text-left">
+          <div className="w-12 h-12 rounded-xl overflow-hidden shadow-md border border-slate-100 group-hover:scale-110 transition-transform">
+            <img 
+              src="images/logo.png" 
+              alt="Dr. Achour" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className='text-sm font-arabic font-bold leading-none text-white'>
+              الدكتور المصطفى عشور
+            </span>
+            <span className={'text-lg font-black tracking-tighter leading-tight transition-colors text-white'}>
+              DR. EL MUSTAPHA <span className="text-red-700">ACHOUR</span>
+            </span>
+          </div>
+        </button>
             <p className="text-slate-400 leading-relaxed text-base italic">
               "L'excellence médicale au service de votre bien-être quotidien, avec une expertise reconnue à Meknès et à l'international."
             </p>
@@ -103,9 +112,9 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 Direct
             </h4>
             <div className="p-6 bg-white/5 rounded-3xl border border-white/10">
-                <p className="text-slate-300 font-bold mb-2">Fixe:</p>
-                <p className="text-red-500 font-black text-xl mb-4">06.12.08.56.99</p>
-                <p className="text-slate-300 font-bold mb-2">GSM:</p>
+                <p className="text-slate-300 font-bold mb-2">Urgences 24/7:</p>
+                <p className="text-red-500 font-black text-xl mb-4">06.49.29.50.99</p>
+                <p className="text-slate-300 font-bold mb-2">GSM Cabinet :</p>
                 <p className="text-white font-black text-xl">06.41.29.82.35</p>
             </div>
           </div>

@@ -6,7 +6,7 @@ const WhatsAppButton: React.FC = () => {
   const logoImg = "images/profil1.jpg";
 
   const handleOpenWhatsApp = () => {
-    const phone = "212641298235";
+    const phone = "212649295099";
     const text = "Bonjour Dr. Achour, je souhaiterais obtenir des informations sur vos services.";
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
     setIsOpen(false);

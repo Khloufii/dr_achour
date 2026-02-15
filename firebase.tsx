@@ -1,15 +1,16 @@
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+// Le reste de ton code (firebaseConfig) est parfait, ne change rien !
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAI3c8O-we8JsfWrSwaP5k3v9xEDvtxq2M",
-  authDomain: "site-medecin-eba6b.firebaseapp.com",
-  projectId: "site-medecin-eba6b",
-  storageBucket: "site-medecin-eba6b.firebasestorage.app",
-  messagingSenderId: "507473380500",
-  appId: "1:507473380500:web:d7b1cb071d94869ede2081"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
