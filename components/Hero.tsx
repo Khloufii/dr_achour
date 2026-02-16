@@ -39,17 +39,16 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
       ))}
 
       <div className="container mx-auto px-6 relative z-10 text-center">
-       <div className="inline-block mb-10 animate-fade-in">
-            <div className="w-32 h-32 mx-auto overflow-hidden shadow-2xl mb-6">
-              <img 
-                src="images/logo.png" 
-                alt="Dr. El Mustapha Achour" 
-                className="w-full h-full object-cover"
-              />
-            </div>
+       <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="mb-8 animate-reveal">
+          <div className="w-36 h-36 mx-auto rounded-[2.5rem] border-4 border-red-600 overflow-hidden shadow-2xl mb-8 bg-white transform hover:rotate-0 transition-transform duration-500">
+            <img src="/images/profil1.jpg" alt="Dr. Achour" className="w-full h-full object-cover" />
+          </div>
+        </div>
         </div>
         
        <div className="space-y-4 mb-10">
+                    <span className="bg-red-700 text-white px-6 py-1.5 rounded-full text-xs font-black uppercase tracking-[0.3em]">Médecin Citoyen / طبيب مواطن</span>
             <h2 className="text-3xl md:text-5xl text-white font-arabic font-bold mb-2">
               Cabinet Médical Dr. El Mustapha Achour
             </h2>

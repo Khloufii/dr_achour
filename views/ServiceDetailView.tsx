@@ -15,26 +15,24 @@ const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ serviceId, onNavi
     switch (id) {
       case '1':
         return `
-          La consultation de médecine générale est le pilier fondamental de notre cabinet. Le Dr. Achour, fort de son expérience au C.H.U. Ibn Sina de Rabat et en France, aborde chaque patient avec une vision holistique. 
+          Diplômé de la Faculté de Médecine de Rabat en 1996, le Dr. Achour pratique une médecine générale basée sur l'excellence diagnostique. Chaque consultation est une opportunité d'allier rigueur scientifique et bienveillance humaine. 
           
-          Lors de votre visite, nous procédons à un examen clinique complet. Cela commence par une écoute attentive de votre anamnèse (historique médical), suivie d'une évaluation physique méticuleuse. Nous traitons les pathologies aiguës telles que les infections respiratoires, les troubles digestifs, ou les douleurs soudaines, tout en assurant un suivi préventif de pointe.
-          
-          La prévention est au cœur de notre pratique : dépistage de l'hypertension, gestion du cholestérol et conseils sur le mode de vie. Pour nous, une consultation réussie est celle où le patient repart non seulement avec un traitement, mais aussi avec une compréhension claire de son état de santé.
+          Nous prenons en charge le patient dans sa globalité, en intégrant son profil psychosocial dans la démarche de soin. Qu'il s'agisse de pathologies aiguës ou chroniques, nous établissons des protocoles thérapeutiques clairs, rationnels et documentés. Notre vision du "Médecin Citoyen" implique une transparence totale sur les stratégies de soins, partagées en confiance avec le patient et ses aidants.
         `;
-      case '2':
+      case '3':
         return `
-          L'échographie médicale est une fenêtre ouverte sur votre santé intérieure. Au cabinet du Dr. Achour, nous utilisons cette technologie non invasive pour obtenir des réponses rapides et précises. Contrairement aux rayons X, l'échographie utilise des ondes sonores (ultrasons), ce qui la rend totalement sûre, y compris pour les femmes enceintes et les enfants.
+          La prise en charge médicale au Cabinet Dr. Achour est hiérarchisée et structurée. Nous assurons un suivi continu pour les patients souffrant de pathologies multiples. 
           
-          Nous réalisons des échographies abdominales (foie, vésicule biliaire, pancréas, rate, reins), pelviennes et des tissus mous. Cet outil est crucial pour diagnostiquer des douleurs abdominales inexpliquées, surveiller des kystes ou évaluer des inflammations articulaires. L'avantage majeur de faire votre échographie directement au cabinet est l'intégration immédiate des résultats dans votre plan de soins, évitant ainsi des déplacements multiples.
+          L'objectif est d'exercer avec efficacité au sein d'une structure de santé citoyenne. Nous prenons en compte le contexte socio-économique pour proposer des solutions thérapeutiques adaptées. La communication avec l'entourage et les autres acteurs de soins est au cœur de notre méthode pour garantir la sécurité et la réussite du traitement sur le long terme.
         `;
       case '4':
         return `
-          L'épileptologie est une spécialité de pointe au sein de notre cabinet. Le Dr. Achour a suivi une formation certifiée pour accompagner les patients souffrant de troubles neurologiques convulsifs. Le diagnostic de l'épilepsie demande une rigueur exceptionnelle pour différencier les crises et identifier leur origine.
+          La douleur ne doit plus être une fatalité. Notre service spécialisé dans la prise en charge des douleurs propose une approche multimodale certifiée. 
           
-          Nous assurons un suivi neurologique régulier pour ajuster les traitements anti-épileptiques avec la plus grande précision, minimisant ainsi les effets secondaires. Notre approche inclut également une dimension sociale et psychologique importante : nous conseillons les patients sur leur rythme de vie, leur sommeil et leur insertion professionnelle ou scolaire. Vivre avec l'épilepsie est possible grâce à un partenariat de confiance entre le patient et son médecin.
+          Nous traitons les douleurs chroniques, articulaires et neuropathiques par une évaluation clinique approfondie. Le Dr. Achour personnalise chaque protocole en fonction de la source de la douleur et de son impact sur la vie quotidienne. Notre mission est de restaurer votre confort et votre mobilité à travers des traitements innovants et un accompagnement constant.
         `;
       default:
-        return "Contenu détaillé en cours de rédaction. Le Dr. Achour assure une prise en charge complète de cette spécialité avec les standards médicaux les plus élevés.";
+        return "Le Dr. Achour assure une prise en charge complète de cette spécialité selon les standards médicaux les plus élevés, en tant que médecin citoyen engagé au service de la santé communautaire.";
     }
   };
 
@@ -60,8 +58,9 @@ const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ serviceId, onNavi
         </div>
 
         <div className="prose prose-slate prose-lg max-w-none">
+          {/* Fix: changed service.description to service.desc to match the property name in servicesData from components/Services.tsx */}
           <p className="text-slate-800 text-lg leading-relaxed font-semibold mb-8 border-l-4 border-red-700 pl-6">
-            {service.description}
+            {service.desc}
           </p>
           
           <div className="space-y-6 text-slate-600 text-base leading-relaxed">
@@ -72,22 +71,22 @@ const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({ serviceId, onNavi
 
           <div className="my-16 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Pourquoi choisir ce soin ?</h3>
+              <h3 className="text-xl font-bold text-slate-900 mb-4">Engagement du Cabinet</h3>
               <ul className="space-y-3">
-                <li className="flex items-start gap-3"><span className="text-red-700 font-bold">✓</span> Expertise spécialisée</li>
-                <li className="flex items-start gap-3"><span className="text-red-700 font-bold">✓</span> Équipement moderne</li>
-                <li className="flex items-start gap-3"><span className="text-red-700 font-bold">✓</span> Suivi personnalisé</li>
-                <li className="flex items-start gap-3"><span className="text-red-700 font-bold">✓</span> Écoute et bienveillance</li>
+                <li className="flex items-start gap-3"><span className="text-red-700 font-bold">✓</span> Suivi documenté & rationnel</li>
+                <li className="flex items-start gap-3"><span className="text-red-700 font-bold">✓</span> Transparence thérapeutique</li>
+                <li className="flex items-start gap-3"><span className="text-red-700 font-bold">✓</span> Approche psychosociale</li>
+                <li className="flex items-start gap-3"><span className="text-red-700 font-bold">✓</span> Éducation participative</li>
               </ul>
             </div>
             <div className="bg-red-50 p-8 rounded-[2rem] border border-red-100 flex flex-col justify-center">
-              <h3 className="text-xl font-bold text-red-900 mb-4">Prendre RDV maintenant</h3>
-              <p className="text-red-800/80 mb-6 text-sm">Réservez votre créneau pour cette consultation spécifique via WhatsApp.</p>
+              <h3 className="text-xl font-bold text-red-900 mb-4">Contact direct</h3>
+              <p className="text-red-800/80 mb-6 text-sm">Discutez de votre protocole de soin directement avec le Dr. Achour sur WhatsApp.</p>
               <button 
                 onClick={() => onNavigate('contact')}
                 className="bg-red-700 text-white font-bold py-4 rounded-xl shadow-xl hover:bg-red-800 transition-all"
               >
-                Contacter le Cabinet
+                Prendre rendez-vous
               </button>
             </div>
           </div>

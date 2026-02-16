@@ -19,17 +19,17 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
       <Hero onNavigate={onNavigate} />
       
       {/* Section Services sur Home */}
-      <section className="py-24 bg-white">
+      <section className="py-32 bg-[#020617] relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(185,28,28,0.05),transparent_65%)]"></div>
         <Services onNavigate={onNavigate} isListView={true} />
-        <div className="text-center mt-12">
-            <button 
-                onClick={() => onNavigate('services')}
-                className="text-red-700 font-bold border-2 border-red-700 px-8 py-3 rounded-full hover:bg-red-700 hover:text-white transition-all text-base"
-            >
-                Explorer tous les services
-            </button>
+        <div className="text-center mt-24 animate-reveal">
+          <button onClick={() => onNavigate('services')} className="group relative bg-white text-slate-900 px-20 py-7 rounded-[3rem] font-black text-2xl overflow-hidden transition-all hover:pr-24 hover:shadow-[0_0_50px_rgba(255,255,255,0.15)] active:scale-95">
+            <span className="relative z-10">DÉCOUVRIR L'EXPERTISE</span>
+            <span className="absolute right-10 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all text-3xl">➔</span>
+          </button>
         </div>
       </section>
+      
       
 
       {/* Nouvelle Section: Consultation & Prise en charge Personnalisée */}
@@ -92,6 +92,11 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
           </div>
       </section>
 
+ {/* Section 2: Motivation, IA & Expertise (Nouvelles sections) */}
+      
+       
+    
+      
       {/* Section À Propos sur Home */}
       <section className="py-24 bg-slate-50 border-y border-slate-100">
         <About onNavigate={onNavigate} />
@@ -119,7 +124,14 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
       </section>
 
       {/* Section Motivation sur Home */}
-      <section className="py-24 bg-medical-gradient text-white">
+      <section className="py-40 bg-[#020617] relative overflow-hidden border-t border-white/5">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(185,28,28,0.08),transparent_70%)]"></div>
+        <div className="container mx-auto px-6 text-center mb-24 relative z-10 animate-reveal">
+          <span className="text-red-600 font-black tracking-[0.6em] uppercase text-xs mb-4 block">Vision & Engagement / رؤية والتزام</span>
+          <h2 className="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter">Médecin <span className="text-red-700">Citoyen</span></h2>
+          <p className="text-2xl font-arabic font-bold text-slate-400">دور الطبيب العام داخل المنظومة الصحية والالتزام بخدمة المواطن</p>
+          <div className="w-40 h-1.5 bg-red-700 mx-auto mt-12 rounded-full shadow-[0_0_30px_rgba(185,28,28,0.8)]"></div>
+        </div>
         <Motivation />
       </section>
 
