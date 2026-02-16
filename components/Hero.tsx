@@ -41,7 +41,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
       <div className="container mx-auto px-6 relative z-10 text-center">
        <div className="container mx-auto px-6 relative z-10 text-center">
         <div className="mb-8 animate-reveal">
-          <div className="w-36 h-36 mx-auto rounded-[2.5rem] border-4 border-red-600 overflow-hidden shadow-2xl mb-8 bg-white transform hover:rotate-0 transition-transform duration-500">
+          <div className="w-16 h-16 mx-auto rounded-[2.5rem] border-4 border-red-600 overflow-hidden shadow-2xl mb-8 bg-white transform hover:rotate-0 transition-transform duration-500">
             <img src="/images/profil1.jpg" alt="Dr. Achour" className="w-full h-full object-cover" />
           </div>
         </div>
